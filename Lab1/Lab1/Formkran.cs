@@ -12,30 +12,48 @@ namespace Lab1
 {
     public partial class Formkran : Form
     {
+        private ITransport kran;
         public Formkran()
         {
             InitializeComponent();
         }
 
-        private Kran kran;
-
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxkran.Width, pictureBoxkran.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            kran.DrawKran(gr);
+            kran.DrawTransport(gr);
             pictureBoxkran.Image = bmp;
         }
-        private void buttonCreate_Click(object sender, EventArgs e)
+        /*private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            kran = new Kran();
-            kran.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Black,
-           Color.Brown, Color.Cyan, true, true); kran.SetPosition(rnd.Next(10, 100),
-          rnd.Next(10, 100), pictureBoxkran.Width, pictureBoxkran.Height);
+            kran = new Gusmashina(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Black);
+            kran.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxkran.Width,
+            pictureBoxkran.Height);
+            //Color.Brown, Color.Cyan, true, true); kran.SetPosition(rnd.Next(10, 100),
+            //rnd.Next(10, 100), pictureBoxkran.Width, pictureBoxkran.Height);
+            Draw();
+        }*/
+
+        private void buttonCreateGusmashina_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            kran = new Gusmashina(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Black);
+            kran.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxkran.Width,
+            pictureBoxkran.Height);
+            //Color.Brown, Color.Cyan, true, true); kran.SetPosition(rnd.Next(10, 100),
+            //rnd.Next(10, 100), pictureBoxkran.Width, pictureBoxkran.Height);
             Draw();
         }
-
+        private void buttonCreateKran_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            kran = new Kran(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Black, Color.Brown, Color.Cyan, true, true);
+            kran.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxkran.Width,
+            pictureBoxkran.Height);
+            Draw();
+        }
         private void buttonMove_Click(object sender, EventArgs e)
         {
             //получаем имя кнопки
