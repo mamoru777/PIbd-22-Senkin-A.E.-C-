@@ -88,14 +88,14 @@ namespace Lab1
         }
         public override void DrawTransport(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);
+            Pen pen = new Pen(MainColor);
             Brush br;
             br = new SolidBrush(MainColor);
             g.FillRectangle(br, _startPosX + 60, _startPosY + 40, 30, 30);
             g.FillRectangle(br, _startPosX + 10, _startPosY + 70, 80, 30);
 
 
-            br = new SolidBrush(Color.Black);
+            br = new SolidBrush(MainColor);
             g.DrawEllipse(pen, _startPosX, _startPosY + 100, 110, 25);
             g.FillEllipse(br, _startPosX + 7, _startPosY + 105, 15, 15);
             g.FillEllipse(br, _startPosX + 25, _startPosY + 108, 15, 15);
