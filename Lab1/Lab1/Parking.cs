@@ -10,9 +10,13 @@ namespace Lab1
     public class Parking<T> where T : class, ITransport   
     {
         /// <summary>
-        /// Массив объектов, которые храним
+        /// Список объектов, которые храним
         /// </summary>
-        private readonly T[] _places;
+        private readonly List<T> _places;
+        /// <summary>
+        /// Максимальное количество мест на парковке
+        /// </summary>
+        private readonly int _maxCount;
         /// <summary>
         /// Ширина окна отрисовки
         /// </summary>
@@ -43,9 +47,10 @@ namespace Lab1
         {
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
+            _maxCount = width * height;
             w = width;
             h = height;
-            _places = new T[width * height];
+            _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;
         }
@@ -56,18 +61,24 @@ namespace Lab1
         /// <param name="p">Парковка</param>
         /// <param name="car">Добавляемый автомобиль</param>
         /// <returns></returns>
-        public static int operator + (Parking<T> p, T kran)
+        public static bool operator + (Parking<T> p, T kran)
         {
-            // Прописать логику для сложения
-            for (int i = 0; i < p._places.Length; i++)
+            int flag = 0;
+            for (int i = 0; i < p._maxCount; i++)
             {
-                if (p._places[i] == null)
-                {
-                    p._places[i] = kran;
-                    return i;
-                }
+                if (p._places[i] != null)
+                    flag++;
             }
-            return -1;      
+            if (flag < p._maxCount)
+            {
+                p._places[flag] = kran;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
             
         }
         /// <summary>
@@ -79,7 +90,7 @@ namespace Lab1
             /// <returns></returns>
         public static T operator -(Parking<T> p, int index)
         {
-            if (index >= 0 && index < p._places.Length)
+            if (index >= 0 && index < p._maxCount)
             {
                 var kran = p._places[index];
                 p._places[index] = null;
@@ -101,7 +112,7 @@ namespace Lab1
             int widthpos;
             int heightpos;
             DrawMarking(g);
-            for (int i = 0; i < _places.Length; i++)
+            for (int i = 0; i < _places.Count; i++)
             {
 
                 if (flagw < w)
