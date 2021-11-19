@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Lab1
 {
@@ -44,7 +45,9 @@ namespace Lab1
         public void AddParking(string name)
         {
             // Прописать логику для добавления
+            Graphics g;
             parkingStages[name] = new Parking<Vehicle>(pictureWidth, pictureHeight);
+            //Parking<Vehicle>.Draw(g);
         }
         /// <summary>
         /// Удаление парковки
