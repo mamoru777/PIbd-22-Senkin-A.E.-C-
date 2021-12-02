@@ -117,6 +117,7 @@
             this.listBoxParkings.Name = "listBoxParkings";
             this.listBoxParkings.Size = new System.Drawing.Size(104, 69);
             this.listBoxParkings.TabIndex = 7;
+            this.listBoxParkings.SelectedIndexChanged += new System.EventHandler(this.listBoxParkings_SelectedIndexChanged);
             // 
             // textBoxNewLevelName
             // 

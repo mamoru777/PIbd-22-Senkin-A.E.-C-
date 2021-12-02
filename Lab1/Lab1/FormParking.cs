@@ -20,7 +20,7 @@ namespace Lab1
         {
             InitializeComponent();
             parkingCollection = new ParkingCollection(pictureBoxParking.Width, pictureBoxParking.Height);
-            Draw();
+            //Draw();
         }
         /// <summary>
         /// Заполнение listBoxLevels
@@ -85,7 +85,7 @@ namespace Lab1
                     {
                         if (MessageBox.Show($"Удалить парковку  { listBoxParkings.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                            parkingCollection.DelParking(textBoxNewLevelName.Text);
+                            parkingCollection.DelParking(listBoxParkings.SelectedItem.ToString());
 
                             ReloadLevels();
                         }

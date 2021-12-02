@@ -63,23 +63,20 @@ namespace Lab1
         /// <returns></returns>
         public static bool operator + (Parking<T> p, T kran)
         {
-            int flag = 0;
-            for (int i = 0; i < p._maxCount; i++)
-            {
-                if (p._places[i] != null)
-                    flag++;
-            }
-            if (flag < p._maxCount)
-            {
-                p._places[flag] = kran;
-                return true;
-            }
-            else
+            if (p._places.Count >= p._maxCount)
             {
                 return false;
             }
+            for (int i = 0; i < p._maxCount; i++)
+            {
+                if (p._places.Contains(kran) == false)
+                {
+                    p._places.Add(kran);
+                    return true;
+                }
 
-            
+            }
+                return false;           
         }
         /// <summary>
         /// Перегрузка оператора вычитания
@@ -90,16 +87,22 @@ namespace Lab1
             /// <returns></returns>
         public static T operator -(Parking<T> p, int index)
         {
-            if (index >= 0 && index < p._maxCount)
+            if (p._places.Count - 1 < index)
             {
-                var kran = p._places[index];
-                p._places[index] = null;
-                return kran;
+                return null;
+            }
+            if (index < p._maxCount)
+            {
+                T a = p._places[index];
+
+                p._places.RemoveAt(index);
+                return a;
             }
             else
             {
                 return null;
             }
+
         }
         /// <summary>
         /// Метод отрисовки парковки
