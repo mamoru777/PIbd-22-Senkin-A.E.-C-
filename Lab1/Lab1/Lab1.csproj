@@ -54,6 +54,12 @@
     <Compile Include="Formkran.Designer.cs">
       <DependentUpon>Formkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKranConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKranConfig.Designer.cs">
+      <DependentUpon>FormKranConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormParking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="Formkran.resx">
       <DependentUpon>Formkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKranConfig.resx">
+      <DependentUpon>FormKranConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormParking.resx">
       <DependentUpon>FormParking.cs</DependentUpon>

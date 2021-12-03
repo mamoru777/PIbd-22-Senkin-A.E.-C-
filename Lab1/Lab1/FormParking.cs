@@ -20,7 +20,6 @@ namespace Lab1
         {
             InitializeComponent();
             parkingCollection = new ParkingCollection(pictureBoxParking.Width, pictureBoxParking.Height);
-            //Draw();
         }
         /// <summary>
         /// Заполнение listBoxLevels
@@ -84,13 +83,14 @@ namespace Lab1
                     if (listBoxParkings.SelectedIndex > -1)
                     {
                         if (MessageBox.Show($"Удалить парковку  { listBoxParkings.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                        {
                             parkingCollection.DelParking(listBoxParkings.SelectedItem.ToString());
 
                             ReloadLevels();
                         }
                     }
                 }
+        /*
         /// <summary>
         /// Обработка нажатия кнопки "Припарковать автомобиль"
         /// </summary>
@@ -147,7 +147,7 @@ namespace Lab1
                     }
                 }
             }              
-        }
+        }*/
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
         /// </summary>
@@ -177,9 +177,35 @@ namespace Lab1
         {   
             Draw();
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
 
+        /// <summary>
+        /// Обработка нажатия кнопки "Добавить автомобиль"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSetKran_Click(object sender, EventArgs e)
+        {
+            var formKranConfig = new FormKranConfig();
+            formKranConfig.AddEvent(AddKran);
+            formKranConfig.Show();
+        }
+        /// <summary>
+        /// Метод добавления машины
+        /// </summary>
+        /// <param name="car"></param>
+        private void AddKran(Vehicle kran)
+        {
+            if (kran != null && listBoxParkings.SelectedIndex > -1)
+            {
+                if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + kran)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
         }
     }
 }

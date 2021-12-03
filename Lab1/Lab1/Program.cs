@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace Lab1
 {
+    public delegate void Action<Vehicle>(Vehicle kran); //KranDelegate(Vehicle kran);
     static class Program
     {
         /// <summary>

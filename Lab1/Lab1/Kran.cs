@@ -56,5 +56,18 @@ namespace Lab1
                 g.FillEllipse(br, _startPosX + 65, _startPosY + 75, 20, 20);
             }
         }
+        /// <summary>
+        /// Смена дополнительного цвета
+        /// </summary>
+        /// <param name="color"></param>
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
+        
+        public void SetDopColor2(Color color)
+        {
+            DopColor2 = color;
+        }
     }
 }
