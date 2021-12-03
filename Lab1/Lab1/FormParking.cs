@@ -20,7 +20,6 @@ namespace Lab1
         {
             InitializeComponent();
             parkingCollection = new ParkingCollection(pictureBoxParking.Width, pictureBoxParking.Height);
-            //Draw();
         }
         /// <summary>
         /// Заполнение listBoxLevels
@@ -29,10 +28,14 @@ namespace Lab1
         {
             int index = listBoxParkings.SelectedIndex;
             listBoxParkings.Items.Clear();
-            for (int i = 0; i < parkingCollection.Keys.Count; i++)
+            foreach (string item in parkingCollection.Keys)
+            {
+                listBoxParkings.Items.Add(item);
+            }
+            /*for (int i = 0; i < parkingCollection.Keys.Count; i++)
             {
                 listBoxParkings.Items.Add(parkingCollection.Keys[i]);
-            }
+            }*/
             if (listBoxParkings.Items.Count > 0 && (index == -1 || index >=
             listBoxParkings.Items.Count))
             {
@@ -49,14 +52,13 @@ namespace Lab1
         /// </summary>
         private void Draw()
         {
+            Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
+            Graphics gr = Graphics.FromImage(bmp);           
             if (listBoxParkings.SelectedIndex > -1)
             {
-                Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
-                Graphics gr = Graphics.FromImage(bmp);
-                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
-                pictureBoxParking.Image = bmp;
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);                
             }
-
+            pictureBoxParking.Image = bmp;
         }
         /// Обработка нажатия кнопки "Добавить парковку"
         /// </summary>
@@ -84,11 +86,12 @@ namespace Lab1
                     if (listBoxParkings.SelectedIndex > -1)
                     {
                         if (MessageBox.Show($"Удалить парковку  { listBoxParkings.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                        {
                             parkingCollection.DelParking(listBoxParkings.SelectedItem.ToString());
 
                             ReloadLevels();
                         }
+                        Draw();
                     }
                 }
         /// <summary>
