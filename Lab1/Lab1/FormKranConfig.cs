@@ -16,7 +16,7 @@ namespace Lab1
         /// Переменная-выбранная машина
         /// </summary>
         Vehicle Transport = null;
-
+        Gusmashina gus;
         /// <summary>
         /// Событие
         /// </summary>
@@ -35,6 +35,7 @@ namespace Lab1
             panelBrown.MouseDown += panelColor_MouseDown;
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
+            
         /// <summary>
         /// Отрисовать машину
         /// </summary>

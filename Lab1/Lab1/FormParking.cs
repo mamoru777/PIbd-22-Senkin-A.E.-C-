@@ -48,13 +48,13 @@ namespace Lab1
         /// </summary>
         private void Draw()
         {
+            Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
+            Graphics gr = Graphics.FromImage(bmp);
             if (listBoxParkings.SelectedIndex > -1)
             {
-                Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
-                Graphics gr = Graphics.FromImage(bmp);
                 parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
-                pictureBoxParking.Image = bmp;
             }
+            pictureBoxParking.Image = bmp;
 
         }
         /// Обработка нажатия кнопки "Добавить парковку"
@@ -88,6 +88,7 @@ namespace Lab1
 
                             ReloadLevels();
                         }
+                        Draw();
                     }
                 }
         /*
@@ -207,5 +208,6 @@ namespace Lab1
                 }
             }
         }
+
     }
 }
