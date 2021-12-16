@@ -27,7 +27,24 @@ namespace Lab1
             Okna = okna;
         }
 
-       
+        /// <summary>
+        /// Конструктор для загрузки с файла
+        /// </summary>
+        /// <param name="info"></param>
+        public Kran(string info) : base(info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 8)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                DopColor2 = Color.FromName(strs[4]);
+                Krann = Convert.ToBoolean(strs[5]);
+                Okna = Convert.ToBoolean(strs[6]);
+            }
+        }
 
         public override void DrawTransport(Graphics g)
         {
@@ -68,6 +85,11 @@ namespace Lab1
         public void SetDopColor2(Color color)
         {
             DopColor2 = color;
+        }
+        public override string ToString()
+        {
+            return
+            $"{base.ToString()}{separator}{DopColor.Name}{separator}{DopColor2.Name}{separator}{Krann}{separator}{Okna}{ separator}";
         }
     }
 }
