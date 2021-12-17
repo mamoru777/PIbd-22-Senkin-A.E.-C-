@@ -65,7 +65,7 @@ namespace Lab1
         {
             if (p._places.Count >= p._maxCount)
             {
-                return false;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -89,7 +89,7 @@ namespace Lab1
         {
             if (p._places.Count - 1 < index)
             {
-                return null;
+                throw new ParkingNotFoundException(index);
             }
             if (index < p._maxCount)
             {
