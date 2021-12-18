@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Direction.cs" />
-    <Compile Include="Dopzad.cs" />
     <Compile Include="Formkran.cs">
       <SubType>Form</SubType>
     </Compile>

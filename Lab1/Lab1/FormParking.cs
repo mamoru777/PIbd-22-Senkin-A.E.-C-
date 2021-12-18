@@ -180,9 +180,5 @@ namespace Lab1
         {   
             Draw();
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
