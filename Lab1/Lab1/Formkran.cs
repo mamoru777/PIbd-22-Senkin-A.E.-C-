@@ -57,5 +57,9 @@ namespace Lab1
             }
             Draw();
         }
+        private void Formkran_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
