@@ -37,10 +37,6 @@ namespace Lab1
         /// Основной цвет кузова
         /// </summary>
         public Color MainColor { protected set; get; }
-        public void Method()
-        {
-
-        }
         public void SetPosition(int x, int y, int width, int height)
         {
             _startPosX = x;

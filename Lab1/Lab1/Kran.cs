@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Lab1
 {
-    class Kran : Gusmashina
+    public class Kran : Gusmashina
     {
 
         public Color DopColor { private set; get; }

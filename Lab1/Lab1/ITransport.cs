@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Lab1
 {
-    interface ITransport
+    public interface ITransport
     {
         /// установка позиций
         /// </summary>

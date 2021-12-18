@@ -18,6 +18,11 @@ namespace Lab1
             InitializeComponent();
         }
 
+        public void SetKran(ITransport kran)
+        {
+            this.kran = kran;
+            Draw();
+        }
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxkran.Width, pictureBoxkran.Height);
