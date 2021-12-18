@@ -123,7 +123,6 @@
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxkran);
             this.Name = "Formkran";
-            this.Load += new System.EventHandler(this.Formkran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxkran)).EndInit();
             this.ResumeLayout(false);
 

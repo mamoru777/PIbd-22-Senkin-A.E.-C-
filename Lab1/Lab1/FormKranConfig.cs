@@ -103,25 +103,7 @@ namespace Lab1
                 e.Effect = DragDropEffects.None;
             }
         }
-        /*/// <summary>
-        /// Действия при приеме перетаскиваемой информации
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void panelTransport_DragDrop(object sender, DragEventArgs e)
-        {
-            switch (e.Data.GetData(DataFormats.Text).ToString())
-            {
-                case "Обычный автомобиль":
-                    Transport = new Gusmashina(100, 500, Color.Black);
-                    break;
-                case "Гоночный автомобиль":
-                    Transport = new Kran(100, 500, Color.Black, Color.Black, Color.Blue, true,
-                    true);
-                    break;
-            }
-            DrawTransoprt();
-        }*/
+
         /// <summary>
         /// Действия при приеме перетаскиваемой информации
         /// </summary>
