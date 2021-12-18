@@ -30,15 +30,12 @@ namespace Lab1
             kran.DrawTransport(gr);
             pictureBoxkran.Image = bmp;
         }
-
         private void buttonCreateGusmashina_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             kran = new Gusmashina(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Black);
             kran.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxkran.Width,
             pictureBoxkran.Height);
-            //Color.Brown, Color.Cyan, true, true); kran.SetPosition(rnd.Next(10, 100),
-            //rnd.Next(10, 100), pictureBoxkran.Width, pictureBoxkran.Height);
             Draw();
         }
         private void buttonCreateKran_Click(object sender, EventArgs e)
@@ -70,6 +67,5 @@ namespace Lab1
             }
             Draw();
         }
-
     }
 }
