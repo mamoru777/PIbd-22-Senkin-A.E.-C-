@@ -103,7 +103,6 @@ namespace Lab1
                 e.Effect = DragDropEffects.None;
             }
         }
-        
         /// <summary>
         /// Действия при приеме перетаскиваемой информации
         /// </summary>
