@@ -7,16 +7,16 @@ using System.Drawing;
 
 namespace Lab1
 {
-    public class Gusmashina : Vehicle
+    public class Gusmashina : Vehicle, IEquatable<Gusmashina>
     {
         /// <summary>
         /// Ширина отрисовки автомобиля
         /// </summary>
-        protected readonly int kranWidth = 60;//100;
+        protected readonly int kranWidth = 60;
         /// <summary>
         /// Высота отрисовки автомобиля
         /// </summary>
-        protected readonly int kranHeight = 80;//120;
+        protected readonly int kranHeight = 80;
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -69,8 +69,6 @@ namespace Lab1
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
             {
-
-
                 // вправо
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - kranWidth)
@@ -126,6 +124,56 @@ namespace Lab1
         public override string ToString()
         {
             return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
+        }
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса Car
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Gusmashina other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Gusmashina carObj))
+            {
+                return false;       
+            }
+            else
+            {
+                return Equals(carObj);
+            }
         }
     }
 }

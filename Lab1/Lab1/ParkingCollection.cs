@@ -93,8 +93,7 @@ namespace Lab1
                 {
                     //Начинаем парковку
                     file.WriteLine("Parking" + separator + level.Key);
-                    ITransport mashina = null;
-                    for (int i = 0; (mashina = level.Value.GetNext(i)) != null; i++)
+                    foreach(ITransport mashina in level.Value)                  
                     {
                         if (mashina != null)
                         {

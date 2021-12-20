@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Lab1
 {
-    public class Kran : Gusmashina
+    public class Kran : Gusmashina, IEquatable<Kran>
     {
 
         public Color DopColor { private set; get; }
@@ -90,6 +90,57 @@ namespace Lab1
         {
             return
             $"{base.ToString()}{separator}{DopColor.Name}{separator}{DopColor2.Name}{separator}{Krann}{separator}{Okna}{ separator}";
+        }
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Kran other)
+        {
+            // Реализовать метод сравнения для дочернего класса
+            if (other == null)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (DopColor2 != other.DopColor2)
+            {
+                return false;
+            }
+            if (Krann != other.Krann)
+            {
+                return false;
+            }
+            if (Okna != other.Okna)
+            {
+                return false;
+            }
+            return true;
+
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Kran carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
         }
     }
 }
