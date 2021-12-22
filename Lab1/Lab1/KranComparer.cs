@@ -21,11 +21,11 @@ namespace Lab1
             }
             if (x is Gusmashina && y is Gusmashina)
             {
-                return -ComparerGusmashina((Gusmashina)x, (Gusmashina)y);
+                return ComparerGusmashina((Gusmashina)x, (Gusmashina)y);
             }
             if (x is Kran && y is Kran)
             {
-                return -ComparerKran((Kran)x, (Kran)y);
+                return ComparerKran((Kran)x, (Kran)y);
             }
             return 0;
         }

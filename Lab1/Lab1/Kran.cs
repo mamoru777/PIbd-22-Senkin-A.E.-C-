@@ -99,7 +99,7 @@ namespace Lab1
         public bool Equals(Kran other)
         {
             // Реализовать метод сравнения для дочернего класса
-            if (other == null)
+            if (!Equals((Gusmashina)other))
             {
                 return false;
             }

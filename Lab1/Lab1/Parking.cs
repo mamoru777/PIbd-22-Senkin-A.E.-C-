@@ -63,6 +63,13 @@ namespace Lab1
             pictureHeight = picHeight;
             _currentIndex = -1;
         }
+        public void method()
+        {
+            foreach(T place in _places)
+            {
+
+            }
+        }
         /// <summary>
         /// Перегрузка оператора сложения
         /// Логика действия: на парковку добавляется автомобиль

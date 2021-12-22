@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Collections;
 
 namespace Lab1
 {
@@ -18,6 +19,7 @@ namespace Lab1
         /// Возвращение списка названий праковок
         /// </summary>
         public List<string> Keys => parkingStages.Keys.ToList();
+        //public List<int> Keys2;
         /// <summary>
         /// Ширина окна отрисовки
         /// </summary>
@@ -35,14 +37,13 @@ namespace Lab1
         /// </summary>
         /// <param name="pictureWidth"></param>
         /// <param name="pictureHeight"></param>
+        /// 
         public ParkingCollection(int pictureWidth, int pictureHeight)
         {
             parkingStages = new Dictionary<string, Parking<Vehicle>>();
             this.pictureWidth = pictureWidth;
             this.pictureHeight = pictureHeight;
         }
-
-
         /// <summary>
         /// Добавление парковки
         /// </summary>
@@ -52,8 +53,6 @@ namespace Lab1
             // Прописать логику для добавления
             if (parkingStages.ContainsKey(name)) return;
             parkingStages.Add(name, new Parking<Vehicle>(pictureWidth, pictureHeight));
-
-
         }
         /// <summary>
         /// Удаление парковки

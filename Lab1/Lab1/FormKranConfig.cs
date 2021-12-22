@@ -16,7 +16,7 @@ namespace Lab1
         /// Переменная-выбранная машина
         /// </summary>
         Vehicle Transport = null;
-        Gusmashina gus;
+        //Gusmashina gus;
         /// <summary>
         /// Событие
         /// </summary>
