@@ -16,7 +16,6 @@ namespace Lab1
         /// Переменная-выбранная машина
         /// </summary>
         Vehicle Transport = null;
-        Gusmashina gus;
         /// <summary>
         /// Событие
         /// </summary>
@@ -103,6 +102,7 @@ namespace Lab1
                 e.Effect = DragDropEffects.None;
             }
         }
+
         /// <summary>
         /// Действия при приеме перетаскиваемой информации
         /// </summary>

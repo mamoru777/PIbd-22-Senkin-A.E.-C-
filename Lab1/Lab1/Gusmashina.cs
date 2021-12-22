@@ -23,11 +23,29 @@ namespace Lab1
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес автомобиля</param>
         /// <param name="mainColor">Основной цвет кузова</param>
+        /// /// <summary>
+        /// Разделитель для записи информации по объекту в файл
+        /// </summary>
+        protected readonly char separator = ';';
         public Gusmashina(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+        }
+        /// <summary>
+        /// Конструктор для загрузки с файла
+        /// </summary>
+        /// <param name="info">Информация по объекту</param>
+        public Gusmashina(string info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
         }
         /// <summary>
         /// Конструкторс изменением размеров машины
@@ -50,9 +68,7 @@ namespace Lab1
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
-            {
-
-
+            { 
                 // вправо
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - kranWidth)
@@ -105,6 +121,9 @@ namespace Lab1
             g.FillEllipse(br, _startPosX + 39, _startPosY + 102, 8, 8);
             g.FillEllipse(br, _startPosX + 57, _startPosY + 102, 8, 8);
         }
-
+        public override string ToString()
+        {
+            return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
+        }
     }
 }
