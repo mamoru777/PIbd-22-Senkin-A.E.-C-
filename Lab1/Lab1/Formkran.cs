@@ -30,6 +30,7 @@ namespace Lab1
             kran.DrawTransport(gr);
             pictureBoxkran.Image = bmp;
         }
+
         private void buttonCreateGusmashina_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();

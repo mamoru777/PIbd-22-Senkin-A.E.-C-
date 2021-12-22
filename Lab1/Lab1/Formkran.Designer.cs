@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formkran));
             this.pictureBoxkran = new System.Windows.Forms.PictureBox();
-            this.buttonCreateGusmashina = new System.Windows.Forms.Button();
+
+            this.buttonCreateGusmasina = new System.Windows.Forms.Button();
+
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
@@ -48,6 +50,7 @@
             this.pictureBoxkran.TabIndex = 0;
             this.pictureBoxkran.TabStop = false;
             // 
+
             // buttonCreateGusmashina
             // 
             this.buttonCreateGusmashina.Location = new System.Drawing.Point(0, 0);
@@ -57,6 +60,7 @@
             this.buttonCreateGusmashina.Text = "Создать гусечную машину";
             this.buttonCreateGusmashina.UseVisualStyleBackColor = true;
             this.buttonCreateGusmashina.Click += new System.EventHandler(this.buttonCreateGusmashina_Click);
+
             // 
             // buttonUp
             // 
@@ -120,7 +124,9 @@
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.buttonCreateGusmashina);
+
+            this.Controls.Add(this.buttonCreateGusmasina);
+
             this.Controls.Add(this.pictureBoxkran);
             this.Name = "Formkran";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxkran)).EndInit();
@@ -131,7 +137,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxkran;
-        private System.Windows.Forms.Button buttonCreateGusmashina;
+
+        private System.Windows.Forms.Button buttonCreateGusmasina;
+
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;

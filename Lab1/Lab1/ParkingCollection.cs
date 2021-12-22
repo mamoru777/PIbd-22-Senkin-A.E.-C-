@@ -182,7 +182,7 @@ namespace Lab1
                 else
                 {
                     //если нет такой записи, то это не те данные
-                    return false;
+                    throw new FormatException("Неверный формат файла");
                 }
                 Vehicle mashina = null;
                 string key = string.Empty;
@@ -214,7 +214,7 @@ namespace Lab1
                         var result = parkingStages[key] + mashina;
                         if (!result)
                         {
-                            return false;
+                            throw new OverflowException("Не удалось загрузить автомобиль на парковку");
                         }
                     }
                    

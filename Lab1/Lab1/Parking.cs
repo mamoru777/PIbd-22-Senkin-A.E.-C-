@@ -36,6 +36,7 @@ namespace Lab1
 
         private readonly int width;
 
+
 /// <summary>
 /// Конструктор
 /// </summary>
@@ -46,7 +47,9 @@ namespace Lab1
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
             _maxCount = width * height;
-            this.width = width; 
+
+            this.width = width;
+
             _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;
@@ -62,7 +65,7 @@ namespace Lab1
         {
             if (p._places.Count >= p._maxCount)
             {
-                return false;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -86,7 +89,7 @@ namespace Lab1
         {
             if (p._places.Count - 1 < index)
             {
-                return null;
+                throw new ParkingNotFoundException(index);
             }
             if (index < p._maxCount)
             {
