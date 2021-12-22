@@ -46,7 +46,9 @@ namespace Lab1
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
             _maxCount = width * height;
+
             this.width = width; 
+
             _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;

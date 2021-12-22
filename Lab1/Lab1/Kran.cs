@@ -15,6 +15,7 @@ namespace Lab1
         public bool Gusenica { private set; get; } // Гусеница
         public bool Korpus { private set; get; } // Корпус крана
         public bool Okna { private set; get; } // Окна в корпусе (дополнительная картинка)
+
         public Kran(int maxSpeed, float weight, Color mainColor, Color dopColor, Color dopColor2, bool krann, bool okna):
             base(maxSpeed, weight, mainColor, 100, 120)
         {
@@ -22,7 +23,11 @@ namespace Lab1
             DopColor2 = dopColor2;
             Krann = krann;
             Okna = okna;
+
         } 
+
+        }
+
         public override void DrawTransport(Graphics g)
         {
             Pen pen = new Pen(Color.Black);

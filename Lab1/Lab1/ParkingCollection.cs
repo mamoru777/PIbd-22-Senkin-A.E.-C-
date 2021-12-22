@@ -8,7 +8,9 @@ using System.Drawing;
 namespace Lab1
 {
     public class ParkingCollection
+
     {   
+
             /// <summary>
             /// Словарь (хранилище) с парковками
             /// </summary>

@@ -17,7 +17,6 @@ namespace Lab1
         {
             InitializeComponent();
         }
-
         public void SetKran(ITransport kran)
         {
             this.kran = kran;

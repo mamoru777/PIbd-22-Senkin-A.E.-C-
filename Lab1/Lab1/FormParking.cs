@@ -130,7 +130,6 @@ namespace Lab1
                 Draw();
             }
         }
-
         /// <summary>
         /// Метод обработки выбора элемента на listBoxLevels
         /// </summary>
