@@ -105,17 +105,17 @@ namespace Lab1
         /// <param name="e"></param>
         private void buttonTakeKran_Click(object sender, EventArgs e)
         {
-            if (listBoxParkings.SelectedIndex > -1 && maskedTextBox1.Text != "")
+            if (listBoxParkings.SelectedIndex > -1 && maskedTextBoxPlace.Text != "")
             {
                 try
                 {
-                    var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox1.Text);
+                    var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
                     if (kran != null)
                     {
                         Formkran form = new Formkran();
                         form.SetKran(kran);
                         form.ShowDialog();
-                        logger.Info($"Изъят автомобиль {kran} с места{ maskedTextBox1.Text}");
+                        logger.Info($"Изъят автомобиль {kran} с места{ maskedTextBoxPlace.Text}");
                     }
                     Draw();
                 }
@@ -161,11 +161,9 @@ namespace Lab1
         private void AddKran(Vehicle kran)
         {
             if (kran != null && listBoxParkings.SelectedIndex > -1)
-            {
-                
+            {       
                 try
-                {
-                    
+                {          
                     if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + kran)
                     {
                         Draw();

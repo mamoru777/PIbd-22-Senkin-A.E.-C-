@@ -36,9 +36,7 @@ namespace Lab1
         /// </summary>
         private readonly int _placeSizeHeight = 180;
 
-        private readonly int w;
-
-        private readonly int h;
+        private readonly int width;
 
         /// <summary>
         /// Текущий элемент для вывода через IEnumerator (будет обращаться по своему индексу к ключу словаря, по которму будет возвращаться запись)
@@ -56,19 +54,11 @@ namespace Lab1
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
             _maxCount = width * height;
-            w = width;
-            h = height;
+            this.width = width;
             _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;
             _currentIndex = -1;
-        }
-        public void method()
-        {
-            foreach(T place in _places)
-            {
-
-            }
         }
         /// <summary>
         /// Перегрузка оператора сложения
@@ -134,7 +124,7 @@ namespace Lab1
             for (int i = 0; i < _places.Count; i++)
             {
 
-                if (flagw < w)
+                if (flagw < width)
                 {
                     widthpos = flagw * _placeSizeWidth;
                     heightpos = flagh * _placeSizeHeight;

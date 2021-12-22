@@ -9,15 +9,12 @@ namespace Lab1
 {
     public class Kran : Gusmashina, IEquatable<Kran>
     {
-
         public Color DopColor { private set; get; }
         public Color DopColor2 { private set; get; }
         public bool Krann { private set; get; } // Кран (дополнительная картинка)
         public bool Gusenica { private set; get; } // Гусеница
         public bool Korpus { private set; get; } // Корпус крана
         public bool Okna { private set; get; } // Окна в корпусе (дополнительная картинка)
-
-
         public Kran(int maxSpeed, float weight, Color mainColor, Color dopColor, Color dopColor2, bool krann, bool okna):
             base(maxSpeed, weight, mainColor, 100, 120)
         {
@@ -26,7 +23,6 @@ namespace Lab1
             Krann = krann;
             Okna = okna;
         }
-
         /// <summary>
         /// Конструктор для загрузки с файла
         /// </summary>
@@ -45,7 +41,6 @@ namespace Lab1
                 Okna = Convert.ToBoolean(strs[6]);
             }
         }
-
         public override void DrawTransport(Graphics g)
         {
             Pen pen = new Pen(Color.Black);

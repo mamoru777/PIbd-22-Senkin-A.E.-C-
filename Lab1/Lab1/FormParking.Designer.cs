@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonSetKran = new System.Windows.Forms.Button();
+            this.buttonTakeKran = new System.Windows.Forms.Button();
+            this.labelPlace = new System.Windows.Forms.Label();
+            this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
+            this.groupBoxTakeKran = new System.Windows.Forms.GroupBox();
             this.listBoxParkings = new System.Windows.Forms.ListBox();
             this.textBoxNewLevelName = new System.Windows.Forms.MaskedTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonAddParking = new System.Windows.Forms.Button();
+            this.buttonDelParking = new System.Windows.Forms.Button();
+            this.labelParking = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.Sort = new System.Windows.Forms.Button();
+            this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxTakeKran.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,53 +59,53 @@
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
-            // button2
+            // buttonSetKran
             // 
-            this.button2.Location = new System.Drawing.Point(694, 290);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Добавить транспорт";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonSetKran_Click);
+            this.buttonSetKran.Location = new System.Drawing.Point(694, 290);
+            this.buttonSetKran.Name = "buttonSetKran";
+            this.buttonSetKran.Size = new System.Drawing.Size(104, 36);
+            this.buttonSetKran.TabIndex = 2;
+            this.buttonSetKran.Text = "Добавить транспорт";
+            this.buttonSetKran.UseVisualStyleBackColor = true;
+            this.buttonSetKran.Click += new System.EventHandler(this.buttonSetKran_Click);
             // 
-            // button3
+            // buttonTakeKran
             // 
-            this.button3.Location = new System.Drawing.Point(18, 72);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(67, 22);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Забрать";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonTakeKran_Click);
+            this.buttonTakeKran.Location = new System.Drawing.Point(18, 72);
+            this.buttonTakeKran.Name = "buttonTakeKran";
+            this.buttonTakeKran.Size = new System.Drawing.Size(67, 22);
+            this.buttonTakeKran.TabIndex = 3;
+            this.buttonTakeKran.Text = "Забрать";
+            this.buttonTakeKran.UseVisualStyleBackColor = true;
+            this.buttonTakeKran.Click += new System.EventHandler(this.buttonTakeKran_Click);
             // 
-            // label1
+            // labelPlace
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Место:";
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(15, 49);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(42, 13);
+            this.labelPlace.TabIndex = 4;
+            this.labelPlace.Text = "Место:";
             // 
-            // maskedTextBox1
+            // maskedTextBoxPlace
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(63, 46);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(22, 20);
-            this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBoxPlace.Location = new System.Drawing.Point(63, 46);
+            this.maskedTextBoxPlace.Name = "maskedTextBoxPlace";
+            this.maskedTextBoxPlace.Size = new System.Drawing.Size(22, 20);
+            this.maskedTextBoxPlace.TabIndex = 5;
             // 
-            // groupBox1
+            // groupBoxTakeKran
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(694, 332);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(104, 106);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Забрать гусечную машину";
+            this.groupBoxTakeKran.Controls.Add(this.labelPlace);
+            this.groupBoxTakeKran.Controls.Add(this.buttonTakeKran);
+            this.groupBoxTakeKran.Controls.Add(this.maskedTextBoxPlace);
+            this.groupBoxTakeKran.Location = new System.Drawing.Point(694, 332);
+            this.groupBoxTakeKran.Name = "groupBoxTakeKran";
+            this.groupBoxTakeKran.Size = new System.Drawing.Size(104, 106);
+            this.groupBoxTakeKran.TabIndex = 6;
+            this.groupBoxTakeKran.TabStop = false;
+            this.groupBoxTakeKran.Text = "Забрать гусечную машину";
             // 
             // listBoxParkings
             // 
@@ -123,34 +123,34 @@
             this.textBoxNewLevelName.Size = new System.Drawing.Size(104, 20);
             this.textBoxNewLevelName.TabIndex = 8;
             // 
-            // button4
+            // buttonAddParking
             // 
-            this.button4.Location = new System.Drawing.Point(694, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 36);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Добавить парковку";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.buttonAddParking_Click);
+            this.buttonAddParking.Location = new System.Drawing.Point(694, 69);
+            this.buttonAddParking.Name = "buttonAddParking";
+            this.buttonAddParking.Size = new System.Drawing.Size(104, 36);
+            this.buttonAddParking.TabIndex = 9;
+            this.buttonAddParking.Text = "Добавить парковку";
+            this.buttonAddParking.UseVisualStyleBackColor = true;
+            this.buttonAddParking.Click += new System.EventHandler(this.buttonAddParking_Click);
             // 
-            // button5
+            // buttonDelParking
             // 
-            this.button5.Location = new System.Drawing.Point(694, 186);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 36);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Удалить парковку";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.buttonDelParking_Click);
+            this.buttonDelParking.Location = new System.Drawing.Point(694, 186);
+            this.buttonDelParking.Name = "buttonDelParking";
+            this.buttonDelParking.Size = new System.Drawing.Size(104, 36);
+            this.buttonDelParking.TabIndex = 10;
+            this.buttonDelParking.Text = "Удалить парковку";
+            this.buttonDelParking.UseVisualStyleBackColor = true;
+            this.buttonDelParking.Click += new System.EventHandler(this.buttonDelParking_Click);
             // 
-            // label2
+            // labelParking
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(719, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Парковки:";
+            this.labelParking.AutoSize = true;
+            this.labelParking.Location = new System.Drawing.Point(719, 27);
+            this.labelParking.Name = "labelParking";
+            this.labelParking.Size = new System.Drawing.Size(60, 13);
+            this.labelParking.TabIndex = 11;
+            this.labelParking.Text = "Парковки:";
             // 
             // menuStrip1
             // 
@@ -194,37 +194,37 @@
             // 
             this.saveFileDialog.Filter = "txt file | *.txt";
             // 
-            // Sort
+            // buttonSort
             // 
-            this.Sort.Location = new System.Drawing.Point(694, 239);
-            this.Sort.Name = "Sort";
-            this.Sort.Size = new System.Drawing.Size(104, 34);
-            this.Sort.TabIndex = 13;
-            this.Sort.Text = "Сортировать";
-            this.Sort.UseVisualStyleBackColor = true;
-            this.Sort.Click += new System.EventHandler(this.buttonSort_Click);
+            this.buttonSort.Location = new System.Drawing.Point(694, 239);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(104, 34);
+            this.buttonSort.TabIndex = 13;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Sort);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonSort);
+            this.Controls.Add(this.labelParking);
+            this.Controls.Add(this.buttonDelParking);
+            this.Controls.Add(this.buttonAddParking);
             this.Controls.Add(this.textBoxNewLevelName);
             this.Controls.Add(this.listBoxParkings);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBoxTakeKran);
+            this.Controls.Add(this.buttonSetKran);
             this.Controls.Add(this.pictureBoxParking);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormParking";
             this.Text = "FormParking";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxTakeKran.ResumeLayout(false);
+            this.groupBoxTakeKran.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -235,22 +235,22 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonSetKran;
+        private System.Windows.Forms.Button buttonTakeKran;
+        private System.Windows.Forms.Label labelPlace;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
+        private System.Windows.Forms.GroupBox groupBoxTakeKran;
         private System.Windows.Forms.ListBox listBoxParkings;
         private System.Windows.Forms.MaskedTextBox textBoxNewLevelName;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAddParking;
+        private System.Windows.Forms.Button buttonDelParking;
+        private System.Windows.Forms.Label labelParking;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.Button Sort;
+        private System.Windows.Forms.Button buttonSort;
     }
 }
