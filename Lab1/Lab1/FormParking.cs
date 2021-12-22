@@ -15,13 +15,37 @@ namespace Lab1
         /// <summary>
         /// Объект от класса-парковки
         /// </summary>
-        private readonly Parking<Gusmashina> parking;
+        private readonly ParkingCollection parkingCollection;
         public FormParking()
         {
             InitializeComponent();
-            parking = new Parking<Gusmashina>(pictureBoxParking.Width,
-            pictureBoxParking.Height);
-            Draw();
+            parkingCollection = new ParkingCollection(pictureBoxParking.Width, pictureBoxParking.Height);
+        }
+        /// <summary>
+        /// Заполнение listBoxLevels
+        /// </summary>
+        private void ReloadLevels()
+        {
+            int index = listBoxParkings.SelectedIndex;
+            listBoxParkings.Items.Clear();
+            foreach (string item in parkingCollection.Keys)
+            {
+                listBoxParkings.Items.Add(item);
+            }
+            /*for (int i = 0; i < parkingCollection.Keys.Count; i++)
+            {
+                listBoxParkings.Items.Add(parkingCollection.Keys[i]);
+            }*/
+            if (listBoxParkings.Items.Count > 0 && (index == -1 || index >=
+            listBoxParkings.Items.Count))
+            {
+                listBoxParkings.SelectedIndex = 0;
+            }
+            else if (listBoxParkings.Items.Count > 0 && index > -1 && index <
+            listBoxParkings.Items.Count)
+            {
+                listBoxParkings.SelectedIndex = index;
+            }
         }
         /// <summary>
         /// Метод отрисовки парковки
@@ -29,10 +53,47 @@ namespace Lab1
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
-            Graphics gr = Graphics.FromImage(bmp);
-            parking.Draw(gr);
+            Graphics gr = Graphics.FromImage(bmp);           
+            if (listBoxParkings.SelectedIndex > -1)
+            {
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);                
+            }
             pictureBoxParking.Image = bmp;
         }
+        /// Обработка нажатия кнопки "Добавить парковку"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAddParking_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxNewLevelName.Text))
+            {
+                MessageBox.Show("Введите название парковки", "Ошибка",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            parkingCollection.AddParking(textBoxNewLevelName.Text);
+            ReloadLevels();
+        }
+
+        /// <summary>
+        /// Обработка нажатия кнопки "Удалить парковку"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonDelParking_Click(object sender, EventArgs e)
+                {
+                    if (listBoxParkings.SelectedIndex > -1)
+                    {
+                        if (MessageBox.Show($"Удалить парковку  { listBoxParkings.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            parkingCollection.DelParking(listBoxParkings.SelectedItem.ToString());
+
+                            ReloadLevels();
+                        }
+                        Draw();
+                    }
+                }
         /// <summary>
         /// Обработка нажатия кнопки "Припарковать автомобиль"
         /// </summary>
@@ -40,20 +101,22 @@ namespace Lab1
         /// <param name="e"></param>
         private void buttonSetGusmashina_Click(object sender, EventArgs e)
         {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (listBoxParkings.SelectedIndex > -1)
             {
-                var gusmashina = new Gusmashina(100, 1000, dialog.Color);
-            if (parking + gusmashina >= 0)
+                ColorDialog dialog = new ColorDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    Draw();
+                    var gusmashina = new Gusmashina(100, 1000, dialog.Color);
+                    if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + gusmashina)
+                    {
+                        Draw();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Парковка переполнена");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Парковка переполнена");
-                }
-            }
-            
+            }       
         }
         /// <summary>
         /// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
@@ -62,29 +125,31 @@ namespace Lab1
         /// <param name="e"></param>
         private void buttonSetKran_Click(object sender, EventArgs e)
         {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (listBoxParkings.SelectedIndex > -1)
             {
-                ColorDialog dialogDop = new ColorDialog();
-                if (dialogDop.ShowDialog() == DialogResult.OK)
+                ColorDialog dialog = new ColorDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    ColorDialog dialogDop2 = new ColorDialog();
-                    if (dialogDop2.ShowDialog() == DialogResult.OK)
+                    ColorDialog dialogDop = new ColorDialog();
+                    if (dialogDop.ShowDialog() == DialogResult.OK)
                     {
-                        var kran = new Kran(100, 1000, dialog.Color, dialogDop.Color, dialogDop2.Color,
-true, true);
-                        if (parking + kran >= 0)
+                        ColorDialog dialogDop2 = new ColorDialog();
+                        if (dialogDop2.ShowDialog() == DialogResult.OK)
                         {
-                            Draw();
-                        }
-                        else
-                        {
+                            var kran = new Kran(100, 1000, dialog.Color, dialogDop.Color, dialogDop2.Color, true, true);
+                            if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + kran)
+                            {
+                                Draw();
+                            }
+                            else
+                            {
 
-                            MessageBox.Show("Парковка переполнена");
+                                MessageBox.Show("Парковка переполнена");
+                            }
                         }
                     }
                 }
-            }
+            }              
         }
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
@@ -93,9 +158,9 @@ true, true);
         /// <param name="e"></param>
         private void buttonTakeKran_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (listBoxParkings.SelectedIndex > -1 && maskedTextBoxPlace.Text != "")
             {
-                var kran = parking - Convert.ToInt32(maskedTextBox1.Text);
+                var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
                 if (kran != null)
                 {
                     Formkran form = new Formkran();
@@ -104,6 +169,15 @@ true, true);
                 }
                 Draw();
             }
+        }
+        /// <summary>
+        /// Метод обработки выбора элемента на listBoxLevels
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listBoxParkings_SelectedIndexChanged(object sender, EventArgs e)
+        {   
+            Draw();
         }
     }
 }

@@ -10,9 +10,13 @@ namespace Lab1
     public class Parking<T> where T : class, ITransport   
     {
         /// <summary>
-        /// Массив объектов, которые храним
+        /// Список объектов, которые храним
         /// </summary>
-        private readonly T[] _places;
+        private readonly List<T> _places;
+        /// <summary>
+        /// Максимальное количество мест на парковке
+        /// </summary>
+        private readonly int _maxCount;
         /// <summary>
         /// Ширина окна отрисовки
         /// </summary>
@@ -30,9 +34,7 @@ namespace Lab1
         /// </summary>
         private readonly int _placeSizeHeight = 180;
 
-        private readonly int w;
-
-        private readonly int h;
+        private readonly int width;
 
 /// <summary>
 /// Конструктор
@@ -43,9 +45,9 @@ namespace Lab1
         {
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
-            w = width;
-            h = height;
-            _places = new T[width * height];
+            _maxCount = width * height;
+            this.width = width;
+            _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;
         }
@@ -56,19 +58,22 @@ namespace Lab1
         /// <param name="p">Парковка</param>
         /// <param name="car">Добавляемый автомобиль</param>
         /// <returns></returns>
-        public static int operator + (Parking<T> p, T kran)
+        public static bool operator + (Parking<T> p, T kran)
         {
-            // Прописать логику для сложения
-            for (int i = 0; i < p._places.Length; i++)
+            if (p._places.Count >= p._maxCount)
             {
-                if (p._places[i] == null)
-                {
-                    p._places[i] = kran;
-                    return i;
-                }
+                return false;
             }
-            return -1;      
-            
+            for (int i = 0; i < p._maxCount; i++)
+            {
+                if (p._places.Contains(kran) == false)
+                {
+                    p._places.Add(kran);
+                    return true;
+                }
+
+            }
+                return false;           
         }
         /// <summary>
         /// Перегрузка оператора вычитания
@@ -79,16 +84,22 @@ namespace Lab1
             /// <returns></returns>
         public static T operator -(Parking<T> p, int index)
         {
-            if (index >= 0 && index < p._places.Length)
+            if (p._places.Count - 1 < index)
             {
-                var kran = p._places[index];
-                p._places[index] = null;
-                return kran;
+                return null;
+            }
+            if (index < p._maxCount)
+            {
+                T a = p._places[index];
+
+                p._places.RemoveAt(index);
+                return a;
             }
             else
             {
                 return null;
             }
+
         }
         /// <summary>
         /// Метод отрисовки парковки
@@ -101,10 +112,10 @@ namespace Lab1
             int widthpos;
             int heightpos;
             DrawMarking(g);
-            for (int i = 0; i < _places.Length; i++)
+            for (int i = 0; i < _places.Count; i++)
             {
 
-                if (flagw < w)
+                if (flagw < width)
                 {
                     widthpos = flagw * _placeSizeWidth;
                     heightpos = flagh * _placeSizeHeight;
