@@ -32,10 +32,6 @@ namespace Lab1
             {
                 listBoxParkings.Items.Add(item);
             }
-            /*for (int i = 0; i < parkingCollection.Keys.Count; i++)
-            {
-                listBoxParkings.Items.Add(parkingCollection.Keys[i]);
-            }*/
             if (listBoxParkings.Items.Count > 0 && (index == -1 || index >=
             listBoxParkings.Items.Count))
             {
@@ -57,12 +53,6 @@ namespace Lab1
             if (listBoxParkings.SelectedIndex > -1)
             {
                 parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
-            }
-            pictureBoxParking.Image = bmp;
-            Graphics gr = Graphics.FromImage(bmp);           
-            if (listBoxParkings.SelectedIndex > -1)
-            {
-                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);                
             }
             pictureBoxParking.Image = bmp;
         }
@@ -118,6 +108,8 @@ namespace Lab1
                         Draw();
                     }
                 }
+            }
+        }
         
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
