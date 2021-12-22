@@ -68,9 +68,7 @@ namespace Lab1
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
-            {
-
-
+            { 
                 // вправо
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - kranWidth)

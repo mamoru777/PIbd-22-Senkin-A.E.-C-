@@ -129,7 +129,6 @@ namespace Lab1
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             // Прописать логику вызова dragDrop для панелей, используя sender
-
             if (Transport != null)
             {
                 (sender as Panel).DoDragDrop((sender as Panel).BackColor, DragDropEffects.Move | DragDropEffects.Copy);
