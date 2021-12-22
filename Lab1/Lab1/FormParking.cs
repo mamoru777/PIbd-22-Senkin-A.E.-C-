@@ -28,10 +28,14 @@ namespace Lab1
         {
             int index = listBoxParkings.SelectedIndex;
             listBoxParkings.Items.Clear();
-            for (int i = 0; i < parkingCollection.Keys.Count; i++)
+            foreach (string item in parkingCollection.Keys)
+            {
+                listBoxParkings.Items.Add(item);
+            }
+            /*for (int i = 0; i < parkingCollection.Keys.Count; i++)
             {
                 listBoxParkings.Items.Add(parkingCollection.Keys[i]);
-            }
+            }*/
             if (listBoxParkings.Items.Count > 0 && (index == -1 || index >=
             listBoxParkings.Items.Count))
             {
@@ -55,7 +59,12 @@ namespace Lab1
                 parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
             }
             pictureBoxParking.Image = bmp;
-
+            Graphics gr = Graphics.FromImage(bmp);           
+            if (listBoxParkings.SelectedIndex > -1)
+            {
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);                
+            }
+            pictureBoxParking.Image = bmp;
         }
         /// Обработка нажатия кнопки "Добавить парковку"
         /// </summary>
@@ -91,6 +100,24 @@ namespace Lab1
                         Draw();
                     }
                 }
+        /// <summary>
+        /// Обработка нажатия кнопки "Припарковать автомобиль"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSetGusmashina_Click(object sender, EventArgs e)
+        {
+            if (listBoxParkings.SelectedIndex > -1)
+            {
+                ColorDialog dialog = new ColorDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    var gusmashina = new Gusmashina(100, 1000, dialog.Color);
+                    if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + gusmashina)
+                    {
+                        Draw();
+                    }
+                }
         
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
@@ -121,7 +148,6 @@ namespace Lab1
         {   
             Draw();
         }
-
         /// <summary>
         /// Обработка нажатия кнопки "Добавить автомобиль"
         /// </summary>
@@ -151,6 +177,5 @@ namespace Lab1
                 }
             }
         }
-
     }
 }
