@@ -16,7 +16,6 @@ namespace Lab1
         /// Переменная-выбранная машина
         /// </summary>
         Vehicle Transport = null;
-        Gusmashina gus;
         /// <summary>
         /// Событие
         /// </summary>
@@ -131,7 +130,6 @@ namespace Lab1
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             // Прописать логику вызова dragDrop для панелей, используя sender
-            //DoDragDrop(Control.DefaultBackColor, DragDropEffects.Move | DragDropEffects.Copy);
             if (Transport != null)
             {
                 (sender as Panel).DoDragDrop((sender as Panel).BackColor, DragDropEffects.Move | DragDropEffects.Copy);

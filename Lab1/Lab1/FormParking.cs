@@ -91,64 +91,6 @@ namespace Lab1
                         Draw();
                     }
                 }
-        /*
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonSetGusmashina_Click(object sender, EventArgs e)
-        {
-            if (listBoxParkings.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var gusmashina = new Gusmashina(100, 1000, dialog.Color);
-                    if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + gusmashina)
-                    {
-                        Draw();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Парковка переполнена");
-                    }
-                }
-            }       
-        }
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonSetKran_Click(object sender, EventArgs e)
-        {
-            if (listBoxParkings.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        ColorDialog dialogDop2 = new ColorDialog();
-                        if (dialogDop2.ShowDialog() == DialogResult.OK)
-                        {
-                            var kran = new Kran(100, 1000, dialog.Color, dialogDop.Color, dialogDop2.Color, true, true);
-                            if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + kran)
-                            {
-                                Draw();
-                            }
-                            else
-                            {
-
-                                MessageBox.Show("Парковка переполнена");
-                            }
-                        }
-                    }
-                }
-            }              
-        }*/
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
         /// </summary>
@@ -156,9 +98,9 @@ namespace Lab1
         /// <param name="e"></param>
         private void buttonTakeKran_Click(object sender, EventArgs e)
         {
-            if (listBoxParkings.SelectedIndex > -1 && maskedTextBox1.Text != "")
+            if (listBoxParkings.SelectedIndex > -1 && maskedTextBoxPlace.Text != "")
             {
-                var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox1.Text);
+                var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
                 if (kran != null)
                 {
                     Formkran form = new Formkran();

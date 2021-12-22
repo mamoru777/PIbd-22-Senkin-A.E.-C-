@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxParameters = new System.Windows.Forms.GroupBox();
             this.checkBoxSideOkna = new System.Windows.Forms.CheckBox();
             this.checkBoxKran = new System.Windows.Forms.CheckBox();
             this.numericUpDownMaxSpeed = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownWeight = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelWeight = new System.Windows.Forms.Label();
+            this.labelMaxSpeed = new System.Windows.Forms.Label();
             this.pictureBoxKran = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxKuzov = new System.Windows.Forms.GroupBox();
             this.labelKran = new System.Windows.Forms.Label();
             this.labelGusmashina = new System.Windows.Forms.Label();
-            this.panelTransport = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panelKran = new System.Windows.Forms.Panel();
+            this.groupBoxColor = new System.Windows.Forms.GroupBox();
             this.labelDopColor2 = new System.Windows.Forms.Label();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
@@ -54,29 +54,29 @@
             this.panelWhite = new System.Windows.Forms.Panel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKran)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.panelTransport.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxKuzov.SuspendLayout();
+            this.panelKran.SuspendLayout();
+            this.groupBoxColor.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxParameters
             // 
-            this.groupBox1.Controls.Add(this.checkBoxSideOkna);
-            this.groupBox1.Controls.Add(this.checkBoxKran);
-            this.groupBox1.Controls.Add(this.numericUpDownMaxSpeed);
-            this.groupBox1.Controls.Add(this.numericUpDownWeight);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 159);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(285, 123);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Параметры";
+            this.groupBoxParameters.Controls.Add(this.checkBoxSideOkna);
+            this.groupBoxParameters.Controls.Add(this.checkBoxKran);
+            this.groupBoxParameters.Controls.Add(this.numericUpDownMaxSpeed);
+            this.groupBoxParameters.Controls.Add(this.numericUpDownWeight);
+            this.groupBoxParameters.Controls.Add(this.labelWeight);
+            this.groupBoxParameters.Controls.Add(this.labelMaxSpeed);
+            this.groupBoxParameters.Location = new System.Drawing.Point(12, 159);
+            this.groupBoxParameters.Name = "groupBoxParameters";
+            this.groupBoxParameters.Size = new System.Drawing.Size(285, 123);
+            this.groupBoxParameters.TabIndex = 0;
+            this.groupBoxParameters.TabStop = false;
+            this.groupBoxParameters.Text = "Параметры";
             // 
             // checkBoxSideOkna
             // 
@@ -112,23 +112,23 @@
             this.numericUpDownWeight.Size = new System.Drawing.Size(52, 20);
             this.numericUpDownWeight.TabIndex = 2;
             // 
-            // label2
+            // labelWeight
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Вес крана:";
+            this.labelWeight.AutoSize = true;
+            this.labelWeight.Location = new System.Drawing.Point(6, 78);
+            this.labelWeight.Name = "labelWeight";
+            this.labelWeight.Size = new System.Drawing.Size(62, 13);
+            this.labelWeight.TabIndex = 1;
+            this.labelWeight.Text = "Вес крана:";
             // 
-            // label1
+            // labelMaxSpeed
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Макс. скорость:";
+            this.labelMaxSpeed.AutoSize = true;
+            this.labelMaxSpeed.Location = new System.Drawing.Point(6, 36);
+            this.labelMaxSpeed.Name = "labelMaxSpeed";
+            this.labelMaxSpeed.Size = new System.Drawing.Size(90, 13);
+            this.labelMaxSpeed.TabIndex = 0;
+            this.labelMaxSpeed.Text = "Макс. скорость:";
             // 
             // pictureBoxKran
             // 
@@ -138,16 +138,16 @@
             this.pictureBoxKran.TabIndex = 1;
             this.pictureBoxKran.TabStop = false;
             // 
-            // groupBox2
+            // groupBoxKuzov
             // 
-            this.groupBox2.Controls.Add(this.labelKran);
-            this.groupBox2.Controls.Add(this.labelGusmashina);
-            this.groupBox2.Location = new System.Drawing.Point(13, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(150, 141);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Тип кузова";
+            this.groupBoxKuzov.Controls.Add(this.labelKran);
+            this.groupBoxKuzov.Controls.Add(this.labelGusmashina);
+            this.groupBoxKuzov.Location = new System.Drawing.Point(13, 12);
+            this.groupBoxKuzov.Name = "groupBoxKuzov";
+            this.groupBoxKuzov.Size = new System.Drawing.Size(150, 141);
+            this.groupBoxKuzov.TabIndex = 2;
+            this.groupBoxKuzov.TabStop = false;
+            this.groupBoxKuzov.Text = "Тип кузова";
             // 
             // labelKran
             // 
@@ -174,37 +174,37 @@
             this.labelGusmashina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelGusmashina.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelGusmashina_MouseDown);
             // 
-            // panelTransport
+            // panelKran
             // 
-            this.panelTransport.AllowDrop = true;
-            this.panelTransport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTransport.Controls.Add(this.pictureBoxKran);
-            this.panelTransport.Location = new System.Drawing.Point(169, 12);
-            this.panelTransport.Name = "panelTransport";
-            this.panelTransport.Size = new System.Drawing.Size(153, 141);
-            this.panelTransport.TabIndex = 3;
-            this.panelTransport.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelTransport_DragDrop);
-            this.panelTransport.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelTransport_DragEnter);
+            this.panelKran.AllowDrop = true;
+            this.panelKran.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelKran.Controls.Add(this.pictureBoxKran);
+            this.panelKran.Location = new System.Drawing.Point(169, 12);
+            this.panelKran.Name = "panelKran";
+            this.panelKran.Size = new System.Drawing.Size(153, 141);
+            this.panelKran.TabIndex = 3;
+            this.panelKran.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelTransport_DragDrop);
+            this.panelKran.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelTransport_DragEnter);
             // 
-            // groupBox3
+            // groupBoxColor
             // 
-            this.groupBox3.Controls.Add(this.labelDopColor2);
-            this.groupBox3.Controls.Add(this.labelDopColor);
-            this.groupBox3.Controls.Add(this.labelBaseColor);
-            this.groupBox3.Controls.Add(this.panelPurple);
-            this.groupBox3.Controls.Add(this.panelRed);
-            this.groupBox3.Controls.Add(this.panelYellow);
-            this.groupBox3.Controls.Add(this.panelBlack);
-            this.groupBox3.Controls.Add(this.panelGreen);
-            this.groupBox3.Controls.Add(this.panelBrown);
-            this.groupBox3.Controls.Add(this.panelAqua);
-            this.groupBox3.Controls.Add(this.panelWhite);
-            this.groupBox3.Location = new System.Drawing.Point(328, 17);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(226, 175);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Цвета";
+            this.groupBoxColor.Controls.Add(this.labelDopColor2);
+            this.groupBoxColor.Controls.Add(this.labelDopColor);
+            this.groupBoxColor.Controls.Add(this.labelBaseColor);
+            this.groupBoxColor.Controls.Add(this.panelPurple);
+            this.groupBoxColor.Controls.Add(this.panelRed);
+            this.groupBoxColor.Controls.Add(this.panelYellow);
+            this.groupBoxColor.Controls.Add(this.panelBlack);
+            this.groupBoxColor.Controls.Add(this.panelGreen);
+            this.groupBoxColor.Controls.Add(this.panelBrown);
+            this.groupBoxColor.Controls.Add(this.panelAqua);
+            this.groupBoxColor.Controls.Add(this.panelWhite);
+            this.groupBoxColor.Location = new System.Drawing.Point(328, 17);
+            this.groupBoxColor.Name = "groupBoxColor";
+            this.groupBoxColor.Size = new System.Drawing.Size(226, 175);
+            this.groupBoxColor.TabIndex = 4;
+            this.groupBoxColor.TabStop = false;
+            this.groupBoxColor.Text = "Цвета";
             // 
             // labelDopColor2
             // 
@@ -340,39 +340,39 @@
             this.ClientSize = new System.Drawing.Size(572, 294);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.panelTransport);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxColor);
+            this.Controls.Add(this.panelKran);
+            this.Controls.Add(this.groupBoxKuzov);
+            this.Controls.Add(this.groupBoxParameters);
             this.Name = "FormKranConfig";
             this.Text = "Выбор крана";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxParameters.ResumeLayout(false);
+            this.groupBoxParameters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKran)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.panelTransport.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.groupBoxKuzov.ResumeLayout(false);
+            this.panelKran.ResumeLayout(false);
+            this.groupBoxColor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxParameters;
         private System.Windows.Forms.CheckBox checkBoxSideOkna;
         private System.Windows.Forms.CheckBox checkBoxKran;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxSpeed;
         private System.Windows.Forms.NumericUpDown numericUpDownWeight;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelWeight;
+        private System.Windows.Forms.Label labelMaxSpeed;
         private System.Windows.Forms.PictureBox pictureBoxKran;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxKuzov;
         private System.Windows.Forms.Label labelKran;
         private System.Windows.Forms.Label labelGusmashina;
-        private System.Windows.Forms.Panel panelTransport;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panelKran;
+        private System.Windows.Forms.GroupBox groupBoxColor;
         private System.Windows.Forms.Label labelDopColor2;
         private System.Windows.Forms.Label labelDopColor;
         private System.Windows.Forms.Label labelBaseColor;
