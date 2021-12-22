@@ -99,9 +99,9 @@ namespace Lab1
         /// <param name="e"></param>
         private void buttonTakeKran_Click(object sender, EventArgs e)
         {
-            if (listBoxParkings.SelectedIndex > -1 && maskedTextBox1.Text != "")
+            if (listBoxParkings.SelectedIndex > -1 && maskedTextBoxPlace.Text != "")
             {
-                var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox1.Text);
+                var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
                 if (kran != null)
                 {
                     Formkran form = new Formkran();

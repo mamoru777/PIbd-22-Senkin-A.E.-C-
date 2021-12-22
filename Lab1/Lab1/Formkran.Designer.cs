@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formkran));
             this.pictureBoxkran = new System.Windows.Forms.PictureBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonCreateGusmashina = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonKran = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxkran)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,15 +48,15 @@
             this.pictureBoxkran.TabIndex = 0;
             this.pictureBoxkran.TabStop = false;
             // 
-            // buttonCreate
+            // buttonCreateGusmashina
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(0, 0);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(167, 32);
-            this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать гусечную машину";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreateGusmashina_Click);
+            this.buttonCreateGusmashina.Location = new System.Drawing.Point(0, 0);
+            this.buttonCreateGusmashina.Name = "buttonCreateGusmashina";
+            this.buttonCreateGusmashina.Size = new System.Drawing.Size(167, 32);
+            this.buttonCreateGusmashina.TabIndex = 1;
+            this.buttonCreateGusmashina.Text = "Создать гусечную машину";
+            this.buttonCreateGusmashina.UseVisualStyleBackColor = true;
+            this.buttonCreateGusmashina.Click += new System.EventHandler(this.buttonCreateGusmashina_Click);
             // 
             // buttonUp
             // 
@@ -102,28 +102,27 @@
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // button1
+            // buttonKran
             // 
-            this.button1.Location = new System.Drawing.Point(197, -1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 33);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Создать кран";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonCreateKran_Click);
+            this.buttonKran.Location = new System.Drawing.Point(197, -1);
+            this.buttonKran.Name = "buttonKran";
+            this.buttonKran.Size = new System.Drawing.Size(185, 33);
+            this.buttonKran.TabIndex = 6;
+            this.buttonKran.Text = "Создать кран";
+            this.buttonKran.UseVisualStyleBackColor = true;
+            this.buttonKran.Click += new System.EventHandler(this.buttonCreateKran_Click);
             // 
             // Formkran
             // 
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonKran);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.buttonCreateGusmashina);
             this.Controls.Add(this.pictureBoxkran);
             this.Name = "Formkran";
-            this.Load += new System.EventHandler(this.Formkran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxkran)).EndInit();
             this.ResumeLayout(false);
 
@@ -132,12 +131,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxkran;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonCreateGusmashina;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonLeft;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonKran;
     }
 }
 
