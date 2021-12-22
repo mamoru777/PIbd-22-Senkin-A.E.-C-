@@ -10,6 +10,7 @@ using System.Collections;
 namespace Lab1
 {
     public class ParkingCollection
+
     {
         /// <summary>
         /// Словарь (хранилище) с парковками
@@ -61,7 +62,6 @@ namespace Lab1
         public void DelParking(string name)
         {
             // Прописать логику для удаления
-
             if (parkingStages.ContainsKey(name)) parkingStages.Remove(name);
             else return;
         }
@@ -82,9 +82,35 @@ namespace Lab1
         public bool SaveData(string filename)
         {
             if (File.Exists(filename))
+
+    {   
+            /// <summary>
+            /// Словарь (хранилище) с парковками
+            /// </summary>
+            readonly Dictionary<string, Parking<Vehicle>> parkingStages;
+            /// <summary>
+            /// Возвращение списка названий праковок
+            /// </summary>
+            public List<string> Keys => parkingStages.Keys.ToList();
+            /// <summary>
+            /// Ширина окна отрисовки
+            /// </summary>
+            private readonly int pictureWidth;
+            /// <summary>
+            /// Высота окна отрисовки
+            /// </summary>
+            private readonly int pictureHeight;
+            /// <summary>
+            /// Конструктор
+            /// </summary>
+            /// <param name="pictureWidth"></param>
+            /// <param name="pictureHeight"></param>
+            public ParkingCollection(int pictureWidth, int pictureHeight)
+
             {
                 File.Delete(filename);
             }
+
             using (StreamWriter file = new StreamWriter(filename, false, Encoding.Default))
             {
                 file.WriteLine("ParkingCollection");
@@ -115,6 +141,17 @@ namespace Lab1
                         }
                     }
                 }
+
+            /// <summary>
+            /// Добавление парковки
+            /// </summary>
+            /// <param name="name">Название парковки</param>
+            public void AddParking(string name)
+            {
+                // Прописать логику для добавления
+                if (parkingStages.ContainsKey(name)) return;
+                parkingStages.Add(name, new Parking<Vehicle>(pictureWidth, pictureHeight));
+
             }
             return true;
         }
@@ -127,7 +164,13 @@ namespace Lab1
         {
             if (!File.Exists(filename))
             {
+
                 return false;
+
+                // Прописать логику для удаления
+                if (parkingStages.ContainsKey(name)) parkingStages.Remove(name);
+                else return;
+
             }
             using (StreamReader file = new StreamReader(filename, Encoding.Default))
             {
@@ -179,7 +222,9 @@ namespace Lab1
                    
                 }
             }
+
             return true;
         }
+
     }
 }

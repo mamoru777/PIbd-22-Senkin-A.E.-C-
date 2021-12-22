@@ -38,6 +38,7 @@ namespace Lab1
 
         private readonly int width;
 
+
         /// <summary>
         /// Текущий элемент для вывода через IEnumerator (будет обращаться по своему индексу к ключу словаря, по которму будет возвращаться запись)
         /// </summary>
@@ -49,12 +50,22 @@ namespace Lab1
         /// </summary>
         /// <param name="picWidth">Рамзер парковки - ширина</param>
         /// <param name="picHeight">Рамзер парковки - высота</param>
-        public Parking(int picWidth, int picHeight)
+
+/// <summary>
+/// Конструктор
+/// </summary>
+/// <param name="picWidth">Рамзер парковки - ширина</param>
+/// <param name="picHeight">Рамзер парковки - высота</param>
+    public Parking(int picWidth, int picHeight)
+
         {
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
             _maxCount = width * height;
+
+
             this.width = width;
+
             _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;

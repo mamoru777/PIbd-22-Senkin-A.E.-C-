@@ -34,9 +34,9 @@ namespace Lab1
         {
             int index = listBoxParkings.SelectedIndex;
             listBoxParkings.Items.Clear();
-            for (int i = 0; i < parkingCollection.Keys.Count; i++)
+            foreach (string item in parkingCollection.Keys)
             {
-                listBoxParkings.Items.Add(parkingCollection.Keys[i]);
+                listBoxParkings.Items.Add(item);
             }
             if (listBoxParkings.Items.Count > 0 && (index == -1 || index >=
             listBoxParkings.Items.Count))
@@ -61,7 +61,6 @@ namespace Lab1
                 parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
             }
             pictureBoxParking.Image = bmp;
-
         }
         /// Обработка нажатия кнопки "Добавить парковку"
         /// </summary>
@@ -98,6 +97,7 @@ namespace Lab1
                         Draw();
                     }
                 }
+
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
         /// </summary>
@@ -112,6 +112,7 @@ namespace Lab1
                     var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
                     if (kran != null)
                     {
+
                         Formkran form = new Formkran();
                         form.SetKran(kran);
                         form.ShowDialog();
@@ -125,6 +126,25 @@ namespace Lab1
                     logger.Warn("Кран не найден");
                 }
                 catch (Exception ex)
+                        Draw();
+                    }
+                }
+            }
+        }
+        
+
+        /// <summary>
+        /// Обработка нажатия кнопки "Забрать"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonTakeKran_Click(object sender, EventArgs e)
+        {
+            if (listBoxParkings.SelectedIndex > -1 && maskedTextBoxPlace.Text != "")
+            {
+                var kran = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
+                if (kran != null)
+
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Warn("Неизвестная ошибка");
@@ -142,7 +162,6 @@ namespace Lab1
             logger.Info($"Перешли на парковку { listBoxParkings.SelectedItem.ToString()}");
             Draw();
         }
-
         /// <summary>
         /// Обработка нажатия кнопки "Добавить автомобиль"
         /// </summary>
@@ -194,6 +213,7 @@ namespace Lab1
             }
         }
 
+
         /// <summary>
         /// Обработка нажатия пункта меню "Сохранить"
         /// </summary>
@@ -216,7 +236,6 @@ namespace Lab1
                 }
             }
         }
-
         /// <summary>
         /// Обработка нажатия пункта меню "Загрузить"
         /// </summary>
@@ -227,8 +246,7 @@ namespace Lab1
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
-                {
-                    
+                { 
                     parkingCollection.LoadData(openFileDialog.FileName);
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     logger.Info("Загружено из файла " + openFileDialog.FileName);
@@ -262,5 +280,6 @@ namespace Lab1
                 logger.Info("Сортировка уровней");
             }
         }
+
     }
 }

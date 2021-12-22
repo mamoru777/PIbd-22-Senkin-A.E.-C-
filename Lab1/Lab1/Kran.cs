@@ -22,6 +22,7 @@ namespace Lab1
             DopColor2 = dopColor2;
             Krann = krann;
             Okna = okna;
+
         }
         /// <summary>
         /// Конструктор для загрузки с файла
@@ -41,6 +42,7 @@ namespace Lab1
                 Okna = Convert.ToBoolean(strs[6]);
             }
         }
+
         public override void DrawTransport(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -75,8 +77,7 @@ namespace Lab1
         public void SetDopColor(Color color)
         {
             DopColor = color;
-        }
-        
+        }    
         public void SetDopColor2(Color color)
         {
             DopColor2 = color;

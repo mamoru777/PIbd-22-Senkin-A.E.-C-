@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formkran));
             this.pictureBoxkran = new System.Windows.Forms.PictureBox();
             this.buttonCreateGusmashina = new System.Windows.Forms.Button();
+
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.buttonCreateGusmashina.Text = "Создать гусечную машину";
             this.buttonCreateGusmashina.UseVisualStyleBackColor = true;
             this.buttonCreateGusmashina.Click += new System.EventHandler(this.buttonCreateGusmashina_Click);
+
             // 
             // buttonUp
             // 
@@ -132,6 +134,7 @@
 
         private System.Windows.Forms.PictureBox pictureBoxkran;
         private System.Windows.Forms.Button buttonCreateGusmashina;
+
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
