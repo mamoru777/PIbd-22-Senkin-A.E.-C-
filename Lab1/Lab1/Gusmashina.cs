@@ -51,8 +51,6 @@ namespace Lab1
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
             {
-
-
                 // вправо
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - kranWidth)
@@ -83,7 +81,6 @@ namespace Lab1
                         _startPosY += step;
                     }
                     break;
-
             }
         }
         public override void DrawTransport(Graphics g)
@@ -93,7 +90,6 @@ namespace Lab1
             br = new SolidBrush(MainColor);
             g.FillRectangle(br, _startPosX + 60, _startPosY + 40, 30, 30);
             g.FillRectangle(br, _startPosX + 10, _startPosY + 70, 80, 30);
-
 
             br = new SolidBrush(MainColor);
             g.DrawEllipse(pen, _startPosX, _startPosY + 100, 110, 25);

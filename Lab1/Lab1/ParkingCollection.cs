@@ -9,9 +9,6 @@ namespace Lab1
 {
     public class ParkingCollection
     {
-
-
-        
             /// <summary>
             /// Словарь (хранилище) с парковками
             /// </summary>
@@ -39,8 +36,6 @@ namespace Lab1
                 this.pictureWidth = pictureWidth;
                 this.pictureHeight = pictureHeight;
             }
-
-
             /// <summary>
             /// Добавление парковки
             /// </summary>
@@ -50,8 +45,6 @@ namespace Lab1
                 // Прописать логику для добавления
                 if (parkingStages.ContainsKey(name)) return;
                 parkingStages.Add(name, new Parking<Vehicle>(pictureWidth, pictureHeight));
-
-
             }
             /// <summary>
             /// Удаление парковки
@@ -60,7 +53,6 @@ namespace Lab1
             public void DelParking(string name)
             {
                 // Прописать логику для удаления
-
                 if (parkingStages.ContainsKey(name)) parkingStages.Remove(name);
                 else return;
             }
