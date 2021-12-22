@@ -180,11 +180,9 @@ namespace Lab1
         private void AddKran(Vehicle kran)
         {
             if (kran != null && listBoxParkings.SelectedIndex > -1)
-            {
-                
+            {       
                 try
-                {
-                    
+                {          
                     if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + kran)
                     {
                         Draw();
@@ -199,6 +197,11 @@ namespace Lab1
                 {
                     MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Warn("Пакровка переполнена");
+                }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Warn("Дублирование");
                 }
                 catch
                 (Exception ex)
@@ -261,6 +264,20 @@ namespace Lab1
                     MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Warn("Неизвестная ошибка при сохранении");
                 }
+            }
+        }
+        /// <summary>
+        /// Обработка нажатия кнопки "Сортировка"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            if (listBoxParkings.SelectedIndex > -1)
+            {
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Sort();
+                Draw();
+                logger.Info("Сортировка уровней");
             }
         }
 

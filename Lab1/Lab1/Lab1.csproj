@@ -76,7 +76,9 @@
     <Compile Include="Gusmashina.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Kran.cs" />
+    <Compile Include="KranComparer.cs" />
     <Compile Include="Parking.cs" />
+    <Compile Include="ParkingAlreadyHaveException.cs" />
     <Compile Include="ParkingCollection.cs" />
     <Compile Include="ParkingNotFoundException.cs" />
     <Compile Include="ParkingOccupiedPlaceException.cs" />
