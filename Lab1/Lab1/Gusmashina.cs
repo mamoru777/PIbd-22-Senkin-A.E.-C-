@@ -12,11 +12,11 @@ namespace Lab1
         /// <summary>
         /// Ширина отрисовки автомобиля
         /// </summary>
-        protected readonly int kranWidth = 60;//100;
+        protected readonly int kranWidth = 60;
         /// <summary>
         /// Высота отрисовки автомобиля
         /// </summary>
-        protected readonly int kranHeight = 80;//120;
+        protected readonly int kranHeight = 80;
         /// <summary>
         /// Конструктор
         /// </summary>

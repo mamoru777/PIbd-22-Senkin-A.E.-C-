@@ -52,8 +52,6 @@ namespace Lab1
             // Прописать логику для добавления
             if (parkingStages.ContainsKey(name)) return;
             parkingStages.Add(name, new Parking<Vehicle>(pictureWidth, pictureHeight));
-
-
         }
         /// <summary>
         /// Удаление парковки

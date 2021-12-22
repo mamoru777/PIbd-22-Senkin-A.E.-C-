@@ -34,9 +34,8 @@ namespace Lab1
         /// </summary>
         private readonly int _placeSizeHeight = 180;
 
-        private readonly int w;
+        private readonly int width;
 
-        private readonly int h;
 
 /// <summary>
 /// Конструктор
@@ -48,8 +47,7 @@ namespace Lab1
             int width = picWidth / _placeSizeWidth;
             int height = picHeight / _placeSizeHeight;
             _maxCount = width * height;
-            w = width;
-            h = height;
+            this.width = width;
             _places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;
@@ -118,7 +116,7 @@ namespace Lab1
             for (int i = 0; i < _places.Count; i++)
             {
 
-                if (flagw < w)
+                if (flagw < width)
                 {
                     widthpos = flagw * _placeSizeWidth;
                     heightpos = flagh * _placeSizeHeight;
