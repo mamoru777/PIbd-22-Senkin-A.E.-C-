@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
+
             this.buttonSetGusmashina = new System.Windows.Forms.Button();
+
             this.buttonSetKran = new System.Windows.Forms.Button();
             this.buttonTakeKran = new System.Windows.Forms.Button();
             this.labelPlace = new System.Windows.Forms.Label();
@@ -39,7 +41,11 @@
             this.textBoxNewLevelName = new System.Windows.Forms.MaskedTextBox();
             this.buttonAddParking = new System.Windows.Forms.Button();
             this.buttonDelParking = new System.Windows.Forms.Button();
+
+            this.labelParking = new System.Windows.Forms.Label();
+
             this.labelParkings = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxTakeKran.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +58,15 @@
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
+
+            // buttonSetKran
+            // 
+            this.buttonSetKran.Location = new System.Drawing.Point(694, 257);
+            this.buttonSetKran.Name = "buttonSetKran";
+            this.buttonSetKran.Size = new System.Drawing.Size(104, 36);
+            this.buttonSetKran.TabIndex = 2;
+            this.buttonSetKran.Text = "Добавить транспорт";
+
             // buttonSetGusmashina
             // 
             this.buttonSetGusmashina.Location = new System.Drawing.Point(694, 249);
@@ -69,6 +84,7 @@
             this.buttonSetKran.Size = new System.Drawing.Size(104, 36);
             this.buttonSetKran.TabIndex = 2;
             this.buttonSetKran.Text = "Припарковать кран";
+
             this.buttonSetKran.UseVisualStyleBackColor = true;
             this.buttonSetKran.Click += new System.EventHandler(this.buttonSetKran_Click);
             // 
@@ -103,7 +119,11 @@
             this.groupBoxTakeKran.Controls.Add(this.labelPlace);
             this.groupBoxTakeKran.Controls.Add(this.buttonTakeKran);
             this.groupBoxTakeKran.Controls.Add(this.maskedTextBoxPlace);
+
+            this.groupBoxTakeKran.Location = new System.Drawing.Point(694, 299);
+
             this.groupBoxTakeKran.Location = new System.Drawing.Point(694, 332);
+
             this.groupBoxTakeKran.Name = "groupBoxTakeKran";
             this.groupBoxTakeKran.Size = new System.Drawing.Size(104, 106);
             this.groupBoxTakeKran.TabIndex = 6;
@@ -146,6 +166,16 @@
             this.buttonDelParking.UseVisualStyleBackColor = true;
             this.buttonDelParking.Click += new System.EventHandler(this.buttonDelParking_Click);
             // 
+
+            // labelParking
+            // 
+            this.labelParking.AutoSize = true;
+            this.labelParking.Location = new System.Drawing.Point(719, 9);
+            this.labelParking.Name = "labelParking";
+            this.labelParking.Size = new System.Drawing.Size(60, 13);
+            this.labelParking.TabIndex = 11;
+            this.labelParking.Text = "Парковки:";
+
             // labelParkings
             // 
             this.labelParkings.AutoSize = true;
@@ -154,20 +184,28 @@
             this.labelParkings.Size = new System.Drawing.Size(60, 13);
             this.labelParkings.TabIndex = 11;
             this.labelParkings.Text = "Парковки:";
+
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+
+            this.Controls.Add(this.labelParking);
+
             this.Controls.Add(this.labelParkings);
+4
             this.Controls.Add(this.buttonDelParking);
             this.Controls.Add(this.buttonAddParking);
             this.Controls.Add(this.textBoxNewLevelName);
             this.Controls.Add(this.listBoxParkings);
             this.Controls.Add(this.groupBoxTakeKran);
             this.Controls.Add(this.buttonSetKran);
+
+
             this.Controls.Add(this.buttonSetGusmashina);
+
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "FormParking";
@@ -182,7 +220,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
+
         private System.Windows.Forms.Button buttonSetGusmashina;
+
         private System.Windows.Forms.Button buttonSetKran;
         private System.Windows.Forms.Button buttonTakeKran;
         private System.Windows.Forms.Label labelPlace;
@@ -192,6 +232,10 @@
         private System.Windows.Forms.MaskedTextBox textBoxNewLevelName;
         private System.Windows.Forms.Button buttonAddParking;
         private System.Windows.Forms.Button buttonDelParking;
+
+        private System.Windows.Forms.Label labelParking;
+
         private System.Windows.Forms.Label labelParkings;
+
     }
 }

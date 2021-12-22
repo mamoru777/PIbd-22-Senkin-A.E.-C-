@@ -23,7 +23,11 @@ namespace Lab1
             DopColor2 = dopColor2;
             Krann = krann;
             Okna = okna;
+
+        } 
+
         }
+
         public override void DrawTransport(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -50,6 +54,18 @@ namespace Lab1
                 g.FillEllipse(br, _startPosX + 40, _startPosY + 75, 20, 20);
                 g.FillEllipse(br, _startPosX + 65, _startPosY + 75, 20, 20);
             }
+        }
+        /// <summary>
+        /// Смена дополнительного цвета
+        /// </summary>
+        /// <param name="color"></param>
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }    
+        public void SetDopColor2(Color color)
+        {
+            DopColor2 = color;
         }
     }
 }

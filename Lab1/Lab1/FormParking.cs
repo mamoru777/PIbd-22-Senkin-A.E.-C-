@@ -32,10 +32,6 @@ namespace Lab1
             {
                 listBoxParkings.Items.Add(item);
             }
-            /*for (int i = 0; i < parkingCollection.Keys.Count; i++)
-            {
-                listBoxParkings.Items.Add(parkingCollection.Keys[i]);
-            }*/
             if (listBoxParkings.Items.Count > 0 && (index == -1 || index >=
             listBoxParkings.Items.Count))
             {
@@ -53,10 +49,10 @@ namespace Lab1
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
-            Graphics gr = Graphics.FromImage(bmp);           
+            Graphics gr = Graphics.FromImage(bmp);
             if (listBoxParkings.SelectedIndex > -1)
             {
-                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);                
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
             }
             pictureBoxParking.Image = bmp;
         }
@@ -111,46 +107,10 @@ namespace Lab1
                     {
                         Draw();
                     }
-                    else
-                    {
-                        MessageBox.Show("Парковка переполнена");
-                    }
                 }
-            }       
+            }
         }
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonSetKran_Click(object sender, EventArgs e)
-        {
-            if (listBoxParkings.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        ColorDialog dialogDop2 = new ColorDialog();
-                        if (dialogDop2.ShowDialog() == DialogResult.OK)
-                        {
-                            var kran = new Kran(100, 1000, dialog.Color, dialogDop.Color, dialogDop2.Color, true, true);
-                            if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + kran)
-                            {
-                                Draw();
-                            }
-                            else
-                            {
-
-                                MessageBox.Show("Парковка переполнена");
-                            }
-                        }
-                    }
-                }
-            }              
-        }
+        
         /// <summary>
         /// Обработка нажатия кнопки "Забрать"
         /// </summary>
@@ -178,6 +138,35 @@ namespace Lab1
         private void listBoxParkings_SelectedIndexChanged(object sender, EventArgs e)
         {   
             Draw();
+        }
+        /// <summary>
+        /// Обработка нажатия кнопки "Добавить автомобиль"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSetKran_Click(object sender, EventArgs e)
+        {
+            var formKranConfig = new FormKranConfig();
+            formKranConfig.AddEvent(AddKran);
+            formKranConfig.Show();
+        }
+        /// <summary>
+        /// Метод добавления машины
+        /// </summary>
+        /// <param name="car"></param>
+        private void AddKran(Vehicle kran)
+        {
+            if (kran != null && listBoxParkings.SelectedIndex > -1)
+            {
+                if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + kran)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
         }
     }
 }
