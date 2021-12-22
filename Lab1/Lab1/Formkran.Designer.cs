@@ -35,7 +35,7 @@
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
-            this.buttonKran = new System.Windows.Forms.Button();
+            this.buttonCreateKran = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxkran)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,20 +102,20 @@
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // buttonKran
+            // buttonCreateKran
             // 
-            this.buttonKran.Location = new System.Drawing.Point(197, -1);
-            this.buttonKran.Name = "buttonKran";
-            this.buttonKran.Size = new System.Drawing.Size(185, 33);
-            this.buttonKran.TabIndex = 6;
-            this.buttonKran.Text = "Создать кран";
-            this.buttonKran.UseVisualStyleBackColor = true;
-            this.buttonKran.Click += new System.EventHandler(this.buttonCreateKran_Click);
+            this.buttonCreateKran.Location = new System.Drawing.Point(197, -1);
+            this.buttonCreateKran.Name = "buttonCreateKran";
+            this.buttonCreateKran.Size = new System.Drawing.Size(185, 33);
+            this.buttonCreateKran.TabIndex = 6;
+            this.buttonCreateKran.Text = "Создать кран";
+            this.buttonCreateKran.UseVisualStyleBackColor = true;
+            this.buttonCreateKran.Click += new System.EventHandler(this.buttonCreateKran_Click);
             // 
             // Formkran
             // 
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.buttonKran);
+            this.Controls.Add(this.buttonCreateKran);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
@@ -136,7 +136,7 @@
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonLeft;
-        private System.Windows.Forms.Button buttonKran;
+        private System.Windows.Forms.Button buttonCreateKran;
     }
 }
 
